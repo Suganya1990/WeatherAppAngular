@@ -10,7 +10,7 @@
   justify-content: center;
 
   height: 10vh;
-  font-size: 1.5rem;
+  font-size: 40px;
   color: white;
 }
 fa-icon {
@@ -87,7 +87,7 @@ fa-icon {
 
 @media only screen and (min-width: 500px) {
   .weatherLocation {
-    font-size: 3rem;
+    font-size: 60px;
     padding-top: 2em;
   }
 
@@ -95,7 +95,7 @@ fa-icon {
     font-size: 28px;
   }
   .weatherSlider > fa-icon {
-    font-size: 70px;
+    font-size: 60px;
   }
   .weatherSlider > img {
     width: 70px;
