@@ -85,7 +85,7 @@ fa-icon {
   height: 35px;
 }
 
-@media only screen and (min-width: 376px) {
+@media only screen and (min-width: 500px) {
   .weatherLocation {
     font-size: 3rem;
     padding-top: 2em;
