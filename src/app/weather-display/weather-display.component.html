@@ -1,0 +1,62 @@
+<div class="weatherDetailContainer">
+  <div *ngIf="city" class="weatherLocation">
+    <fa-icon [icon]="faMapMarker"></fa-icon> {{ city }}
+  </div>
+
+  <div class="weatherMainContainer">
+    <div *ngIf="data.temp" class="weatherMain-temp">
+      {{ data.temp }} {{ metric === "imperial" ? "&#8457;" : "&#8451;" }}
+    </div>
+
+    <div *ngIf="data.windSpeed" class="weatherMain-windSpeed">
+      <fa-icon [icon]="faWind"></fa-icon>
+      {{ data.windSpeed }}
+      {{ metric === "imperial" ? "mi/h" : "mi/s" }}
+    </div>
+    <div class="weatherMain-Condition">
+      <span>
+        {{ data.weatherCondition }}
+      </span>
+    </div>
+  </div>
+
+  <div class="weatherSliderContainer">
+    <div *ngIf="data.feels_like" class="weatherSlider weatherSlider-feels_like">
+      <img
+        fill=" rgba(250, 250, 250, 0.95);"
+        src="../../assets/temperature-feels-like.svg"
+        alt="Temperature Feels like"
+        type=""
+      />
+      <br />
+      <span>
+        {{ data.feels_like }}
+        {{ metric === "imperial" ? "&#8457;" : "&#8451;" }}
+      </span>
+    </div>
+
+    <div *ngIf="data.humidity" class="weatherSlider weatherSlider-humidity">
+      <img src="../../assets/humidityIcon.svg" alt="humidity" />
+      <br />
+      <span>
+        {{ data.humidity }}
+      </span>
+    </div>
+    <div *ngIf="data.temp_max" class="weatherSlider weatherSlider-Max">
+      <fa-icon [icon]="faTempH"> </fa-icon>
+      <br />
+      <span>
+        {{ data.temp_max }}
+        {{ metric === "imperial" ? "&#8457;" : "&#8451;" }}
+      </span>
+    </div>
+    <div *ngIf="data.temp_min" class="weatherSlider weatherSlider-Min">
+      <fa-icon [icon]="faTempL"> </fa-icon>
+      <br />
+      <span>
+        {{ data.temp_min }}
+        {{ metric === "imperial" ? "&#8457;" : "&#8451;" }}
+      </span>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,129 @@
+.weatherDetailContainer {
+  background-image: url("../../assets/WeatherAppBackgroundIMG.jpeg");
+  height: 80vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.weatherLocation {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  height: 10vh;
+  font-size: 1.5rem;
+  color: white;
+}
+fa-icon {
+  margin: 0 0.25em;
+  font-weight: 700;
+}
+
+.weatherMainContainer {
+  height: 40vh;
+  text-align: center;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.weatherMain-temp {
+  width: 250px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: none;
+  border-bottom: 3px dotted white;
+  padding-bottom: 0.35em;
+  font-size: 50px;
+  font-weight: 700;
+  color: white;
+}
+.tempScaleBtn {
+  border: none;
+  background: transparent;
+  outline-color: none;
+  height: auto;
+  font-size: 58px;
+  font-family: "Sora", sans-serif;
+  margin: 0;
+  padding: 0;
+  font-weight: 700;
+  color: white;
+}
+.weatherMain-windSpeed {
+  font-size: 14px;
+  margin: 1em auto;
+  color: rgba(250, 250, 250, 0.95);
+  margin: 1.5em 0;
+}
+.weatherMain-Condition {
+  color: rgba(250, 250, 250, 0.85);
+  font-size: 18px;
+  font-weight: 500;
+  text-transform: capitalize;
+}
+
+.weatherSliderContainer {
+  height: 30vh;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: space-around;
+}
+
+/* .weatherSlider-feels_like,
+.weatherSlider-humidity,
+.weatherSlider-Max,
+.weatherSlider-Min {
+} */
+
+.weatherSlider {
+  height: 100px;
+  width: 100px;
+  color: rgba(250, 250, 250, 0.95);
+  text-align: center;
+}
+
+.weatherSlider > fa-icon {
+  font-size: 30px;
+  color: rgba(250, 250, 250, 0.95);
+}
+.weatherSlider > img {
+  width: 35px;
+  height: 35px;
+}
+
+@media only screen and (min-width: 376px) {
+  .weatherLocation {
+    font-size: 3rem;
+    padding-top: 2em;
+  }
+
+  .weatherSlider {
+    font-size: 28px;
+  }
+  .weatherSlider > fa-icon {
+    font-size: 70px;
+  }
+  .weatherSlider > img {
+    width: 70px;
+    height: 70px;
+  }
+
+  .weatherMain-temp {
+    width: 300px;
+    font-size: 75px;
+  }
+  .tempScaleBtn {
+    font-size: 65px;
+  }
+  .weatherMain-windSpeed {
+    font-size: 24px;
+  }
+  .weatherMain-Condition {
+    font-size: 24px;
+  }
+}

@@ -1,0 +1,45 @@
+<app-slider></app-slider>
+
+<form action="" [formGroup]="userInputForm" class="formContainer">
+  <div class="form-group">
+    <label class="form-label" for="country">Country</label>
+    <input
+      required
+      formControlName="country"
+      id="country"
+      type="text"
+      class="form-field form-field__country form-control"
+      placeholder="Country"
+    />
+  </div>
+  <div class="form-group">
+    <label for="province">Province</label>
+    <input
+      formControlName="province"
+      id="province"
+      type="text"
+      class="form-field form-control form-field__province"
+      placeholder="Province/State"
+    />
+  </div>
+
+  <div class="form-group">
+    <label for="city">City</label>
+    <input
+      formControlName="city"
+      id="city"
+      type="text"
+      class="form-field form-control form-field__city"
+      placeholder="City"
+    />
+  </div>
+  <button type="submit" (click)="onSubmit()" class="btn">
+    <fa-icon [icon]="faLocation"></fa-icon>
+  </button>
+</form>
+
+<app-weather-display
+  [data]="currentWeather"
+  [city]="city"
+  [metric]="metric"
+></app-weather-display>

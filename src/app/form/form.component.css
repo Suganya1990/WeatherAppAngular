@@ -1,0 +1,96 @@
+label {
+  display: none;
+}
+.formContainer {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 1.75em 1em;
+  height: 20vh;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(65, 177, 249, 0.2);
+}
+.form-group {
+  height: 30px;
+}
+
+.form-field {
+  border: none;
+  border-bottom: 3px solid #3e4459;
+  background-color: transparent;
+  width: 150px;
+  height: inherit;
+  margin: auto 0.5em auto 0;
+}
+.form-field__city,
+.form-field__province {
+  width: 150px;
+  flex: 1;
+}
+
+.form-field:focus {
+  outline: none;
+}
+.form-field::placeholder {
+  font-size: 12px;
+  font-family: "Sora", sans-serif;
+  color: #3e4459;
+}
+.btn {
+  width: 100px;
+  height: 25px;
+  border: none;
+  border-radius: 20px;
+  font-size: 14px;
+  background-color: rgba(65, 177, 249, 0.2);
+}
+
+.btn:hover {
+  background: #3e5076;
+  color: white;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+textarea:-webkit-autofill:active,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus,
+select:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0px 1000px transparent inset !important;
+}
+
+@media only screen and (min-width: 502px) and (max-width: 602px) {
+  .form-group {
+    height: 40px;
+  }
+
+  .form-field {
+    width: 110px;
+  }
+  .form-field::placeholder {
+    font-size: 18px;
+    padding-left: 3px;
+  }
+}
+
+@media only screen and (min-width: 603px) {
+  .form-group {
+    height: 60px;
+    margin: 0 1em;
+  }
+
+  .form-field {
+    width: 170px;
+    padding-left: 3px;
+  }
+  .form-field::placeholder {
+    font-size: 18px;
+    padding-left: 3px;
+  }
+}
