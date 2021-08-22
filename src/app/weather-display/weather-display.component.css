@@ -37,22 +37,11 @@ fa-icon {
   border: none;
   border-bottom: 3px dotted white;
   padding-bottom: 0.35em;
-  font-size: 50px;
+  font-size: 40px;
   font-weight: 700;
   color: white;
 }
-.tempScaleBtn {
-  border: none;
-  background: transparent;
-  outline-color: none;
-  height: auto;
-  font-size: 58px;
-  font-family: "Sora", sans-serif;
-  margin: 0;
-  padding: 0;
-  font-weight: 700;
-  color: white;
-}
+
 .weatherMain-windSpeed {
   font-size: 14px;
   margin: 1em auto;
