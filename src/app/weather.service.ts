@@ -9,22 +9,18 @@ import { catchError, retry } from 'rxjs/operators';
 })
 export class WeatherService {
   API_KEY = '986f23ae0447c649c36930c44d073083';
-  units = 'imperial';
+  url: string = '';
+  units: string = 'imperial';
+
   constructor(private Http: HttpClient) {}
-
-  getData(country: string, province: string, city: string) {
-    let url = `https://api.openweathermap.org/data/2.5/weather?q=${city},${province},${country}&units=${this.units}&appid=${this.API_KEY}`;
-    return this.Http.get(url);
-  }
-  setMetric(units: string | null) {
-    if (units === 'metric') {
-      this.units = 'metric';
-    } else if (units === 'imperial') {
-      this.units = 'imperial';
-    }
+  setLocation = (country: string, province: string, city: string) => {
+    this.url = `https://api.openweathermap.org/data/2.5/weather?q=${city},${province},${country}&units=${this.units}&appid=${this.API_KEY}`;
+  };
+  setMetric(unit: string) {
+    this.units = unit;
   }
 
-  getMetric(): string {
-    return this.units;
+  getData() {
+    return this.Http.get(this.url);
   }
 }

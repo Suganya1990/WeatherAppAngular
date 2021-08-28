@@ -1,4 +1,4 @@
-<app-slider></app-slider>
+<app-slider (metricEvent)="metricChanged($event)"></app-slider>
 
 <form action="" [formGroup]="userInputForm" class="formContainer">
   <div class="form-group">

@@ -57,11 +57,15 @@ export class FormComponent {
     if (field === 'country') this.country = '';
     if (field === 'province') this.province = '';
     if (field === 'city') this.city = '';
-    this.errorMessage = `Please Enter ${field}`;
-    alert(this.errorMessage);
+    this.alertMsg(field);
   };
 
-  reset = () => {
+  alertMsg(msg: string) {
+    this.errorMessage = `Please Enter ${msg}`;
+    alert(this.errorMessage);
+  }
+
+  resetAll = () => {
     this.currentWeather = {
       temp: 0,
       weatherCondition: '',
@@ -75,31 +79,33 @@ export class FormComponent {
     this.country = '';
     this.city = '';
     this.province = '';
+    this.errorMessage = '';
   };
-
+  metricChanged(val: string) {
+    this.metric = val;
+    this.weatherService.setMetric(this.metric);
+    this.onSubmit();
+  }
   onSubmit() {
     this.setLocation();
     if (this.errorMessage === '') {
-      this.weatherService
-        .getData(this.country, this.province, this.city)
-        .subscribe(
-          (response) => {
-            let data: any = response;
+      this.weatherService.setLocation(this.country, this.province, this.city);
 
-            this.currentWeather = data.main;
-            this.currentWeather.weatherCondition = data.weather[0].description;
-            this.currentWeather.windSpeed = data.wind.speed;
-            this.metric = this.weatherService.getMetric();
-          },
-          (error) => {
-            this.errorMessage = error;
-            this.reset();
-            alert('Could not find your location');
-          }
-        );
+      this.weatherService.getData().subscribe(
+        (response) => {
+          let data: any = response;
+
+          this.currentWeather = data.main;
+          this.currentWeather.weatherCondition = data.weather[0].description;
+          this.currentWeather.windSpeed = data.wind.speed;
+        },
+        (error) => {
+          this.alertMsg(error);
+          this.resetAll();
+        }
+      );
     } else {
-      this.errorMessage = '';
-      this.reset();
+      this.resetAll();
     }
   }
 }

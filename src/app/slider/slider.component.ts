@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Output, EventEmitter } from '@angular/core';
 import { WeatherService } from '../weather.service';
+
 @Component({
   selector: 'app-slider',
   templateUrl: './slider.component.html',
@@ -7,21 +9,21 @@ import { WeatherService } from '../weather.service';
 })
 export class SliderComponent implements OnInit {
   //true == default metric I think I made them opposite as the function
-  value = 'metric';
-  isDefault: boolean = false;
 
+  isDefault: boolean = true;
+
+  @Output() metricEvent = new EventEmitter<string>();
   constructor(private weatherService: WeatherService) {}
 
   ngOnInit(): void {}
 
   myClickFunction() {
-    this.isDefault = !this.isDefault;
-
-    if (this.isDefault === true) this.value = 'metric';
-    if (this.isDefault === false) {
-      this.value = 'imperial';
+    if (this.isDefault === true) {
+      this.metricEvent.emit('metric');
     }
-    // console.log('My Click Function: ' + this.value)
-    this.weatherService.setMetric(this.value);
+    if (this.isDefault === false) {
+      this.metricEvent.emit('imperial');
+    }
+    this.isDefault = !this.isDefault;
   }
 }
