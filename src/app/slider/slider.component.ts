@@ -10,7 +10,7 @@ import { WeatherService } from '../weather.service';
 export class SliderComponent implements OnInit {
   //true == default metric I think I made them opposite as the function
 
-  isDefault: boolean = false;
+  isDefault: boolean = true;
 
   @Output() metricEvent = new EventEmitter<string>();
   constructor(private weatherService: WeatherService) {}
@@ -18,6 +18,7 @@ export class SliderComponent implements OnInit {
   ngOnInit(): void {}
 
   myClickFunction() {
+    !this.isDefault;
     if (this.isDefault === true) {
       this.metricEvent.emit('metric');
     }

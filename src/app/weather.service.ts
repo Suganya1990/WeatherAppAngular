@@ -17,6 +17,9 @@ export class WeatherService {
     this.units = unit;
   }
 
+  getMetric() {
+    return this.units;
+  }
   getData() {
     return this.Http.get(this.url);
   }

@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-
+import { WeatherService } from '../weather.service';
 import {
   faWind,
   faMapMarker,

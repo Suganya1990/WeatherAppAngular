@@ -4,7 +4,6 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { WeatherService } from '../weather.service';
 import { Weather } from '../weather';
 import { faLocationArrow } from '@fortawesome/free-solid-svg-icons';
-import { ThisReceiver } from '@angular/compiler';
 
 @Component({
   selector: 'app-form',
@@ -82,12 +81,13 @@ export class FormComponent {
     this.errorMessage = '';
   };
   metricChanged(val: string) {
-    this.metric = val;
-    this.weatherService.setMetric(this.metric);
+    this.weatherService.setMetric(val);
     this.onSubmit();
   }
+
   onSubmit() {
     this.setLocation();
+    this.metric = this.weatherService.getMetric();
     if (this.errorMessage === '') {
       this.weatherService.setLocation(this.country, this.province, this.city);
 
