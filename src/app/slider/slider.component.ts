@@ -10,7 +10,7 @@ import { WeatherService } from '../weather.service';
 export class SliderComponent implements OnInit {
   //true == default metric I think I made them opposite as the function
 
-  isDefault: boolean = true;
+  isDefault: boolean = false;
 
   @Output() metricEvent = new EventEmitter<string>();
   constructor(private weatherService: WeatherService) {}

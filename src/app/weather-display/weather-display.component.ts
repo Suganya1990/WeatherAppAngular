@@ -7,7 +7,6 @@ import {
   faTemperatureLow,
   faTemperatureHigh,
 } from '@fortawesome/free-solid-svg-icons';
-import { TripOriginRounded } from '@material-ui/icons';
 
 @Component({
   selector: 'app-weather-display',
