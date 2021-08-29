@@ -1,4 +1,4 @@
-<div class="weatherDetailContainer">
+<div class="weatherDetailContainer" *ngIf(isLoaded)>
   <div *ngIf="city" class="weatherLocation">
     <fa-icon [icon]="faMapMarker"></fa-icon> {{ city }}
   </div>

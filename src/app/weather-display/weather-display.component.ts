@@ -1,13 +1,18 @@
 import { Component, OnInit, Input } from '@angular/core';
 
-import { faWind, faMapMarker, faCircle, faTemperatureLow, faTemperatureHigh } from '@fortawesome/free-solid-svg-icons';
-
-
+import {
+  faWind,
+  faMapMarker,
+  faCircle,
+  faTemperatureLow,
+  faTemperatureHigh,
+} from '@fortawesome/free-solid-svg-icons';
+import { TripOriginRounded } from '@material-ui/icons';
 
 @Component({
   selector: 'app-weather-display',
   templateUrl: './weather-display.component.html',
-  styleUrls: ['./weather-display.component.css']
+  styleUrls: ['./weather-display.component.css'],
 })
 export class WeatherDisplayComponent implements OnInit {
   @Input()
@@ -16,14 +21,13 @@ export class WeatherDisplayComponent implements OnInit {
   city: string = '';
   @Input()
   metric: string = '';
-  constructor() { }
 
-  ngOnInit(): void {
-    
-  }
+  constructor() {}
+
+  ngOnInit(): void {}
   faWind = faWind;
-  faMapMarker = faMapMarker
+  faMapMarker = faMapMarker;
   faCircle = faCircle;
-  faTempH = faTemperatureHigh
-  faTempL = faTemperatureLow
+  faTempH = faTemperatureHigh;
+  faTempL = faTemperatureLow;
 }
