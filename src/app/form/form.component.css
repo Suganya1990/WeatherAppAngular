@@ -1,6 +1,10 @@
 label {
   display: none;
 }
+input,
+select {
+  font-size: 100%;
+}
 .formContainer {
   display: flex;
   flex-wrap: wrap;
